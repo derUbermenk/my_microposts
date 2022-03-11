@@ -1,0 +1,11 @@
+{{ define "content" }}
+<form role="form" action="/microposts/create" method="post">
+  <label for="title">Title</label><br>
+  <input type="text" id="title" name="title"><br>
+
+  <label for="content">Content</label><br>
+  <textarea id="content" name="content"
+          rows="5" placeholder="Write something...">
+  </textarea>
+</form>
+{{ end }}
