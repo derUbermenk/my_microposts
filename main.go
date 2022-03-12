@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"my_microposts/routes"
+	"my_microposts/handlers"
 )
 
 func main() {
@@ -14,8 +14,9 @@ func main() {
 	mux := http.NewServeMux()
 
 	// make root as micropost route
-	mux.HandleFunc(`/`, routes.Microposts.Index)
-	mux.HandleFunc(`/microposts/new`, routes.Microposts.New)
+	mux.HandleFunc(`/`, handlers.Microposts.Index)
+	mux.HandleFunc(`/microposts/new`, handlers.Microposts.New)
+	mux.HandleFunc(`/microposts/create`, handlers.Microposts.Create)
 
 	// starting up the server
 	server := &http.Server{

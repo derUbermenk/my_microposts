@@ -1,5 +1,16 @@
 {{ define "content" }}
 <h1>Hello microposts</h1>
 
+{{ range . }}
+  <div class="micropost">
+    <div class="title">
+      {{ .Title }}
+    </div>
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}
+
 <a href="/microposts/new"> New micropost </a>
 {{ end }}
